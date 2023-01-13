@@ -1,8 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+.header{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5vh;
+    padding: 5px 5%;
+
+}
+.header .navlinks{
+    list-style: none;
+}
+.header .navlinks li{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0 50px;
+}
+.header .navlinks a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;
+}
+.header .navlinks li:hover{
+    transform: scale(1.2);
+
+}
+.header .navlinks li a:hover{
+    color: #ffbc0e;
+}
 #contenedor{
     display: grid;
     background-color: aquamarine;
     border-spacing: 0cm;
     align-items: center;
-    width: 100vw;
-    min-height: 100vh   ;
+    min-height: 95vh   ;
 }
