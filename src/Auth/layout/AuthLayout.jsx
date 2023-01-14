@@ -1,20 +1,31 @@
-import {  MDBContainer,  MDBCol,  MDBRow} from 'mdb-react-ui-kit';
+import {  MDBCard,MDBCardImage,MDBCardBody, MDBContainer,  MDBCol,  MDBRow} from 'mdb-react-ui-kit';
 export const AuthLayout = ({children, title=""}) => {
   return (
     <>
         <div id='contenedor'>
-            <MDBContainer fluid className="p-3 my-5">
-                <MDBRow>
+          
+        
+          <MDBContainer>
+          <img src='/img/Pokemon-cropped.svg' alt='Pikachu' className='imgpikachu'/>
+            <MDBCard className='card'>
 
-                <MDBCol col='10' md='5'>
-                    <img src='/img/Pokemon.svg' className="img-fluid" alt="Pikachu imagen"/>
-                </MDBCol>
+              <MDBRow className='g-0 d-flex align-items-center'>                
+
+                <MDBCol md='15'>
+
+                  <MDBCardBody>
             
-                {children}
+                    {children}
 
-                </MDBRow>
+                </MDBCardBody>
 
-            </MDBContainer>
+                </MDBCol>
+
+              </MDBRow>
+
+            </MDBCard>
+          </MDBContainer>
+            
         </div>
     </>
   )
