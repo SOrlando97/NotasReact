@@ -17,7 +17,7 @@
 .header .navlinks li{
     display: inline-block;
     margin-top: 20px;
-    padding: 0 px;
+    padding: 20px;
 }
 .header .navlinks a{
     font-size: 700;
@@ -31,25 +31,27 @@
 .header .navlinks li a:hover{
     color: #ffbc0e;
 }
-#contenedor{
-    display: grid;
-    background-color: aquamarine;
-    border-spacing: 0cm;
-    align-items: center;
-    min-height: 95vh   ;
-}
 
 .rounded-t-5 {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-  }
-  
-  @media (max-width: 550px) {
-    .rounded-tr-lg-0 {
-      border-top-right-radius: 0.5rem;
-      border-bottom-left-radius: 0rem;
-    }
-  }
- .card{
-    box-shadow: 4px 4px 10px;
-  }
+}
+
+@media (max-width: 550px) {
+.rounded-tr-lg-0 {
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0rem;
+}
+}
+.card{
+box-shadow: 4px 4px 10px;
+}
+.maxconteinerform{
+font-size: 20px;
+max-width: 400px;
+margin: 5% auto;
+text-align: center;
+}
+.imgpikachu{
+    max-width: 400px;
+}
