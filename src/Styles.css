@@ -7,28 +7,35 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 5vh;
+    height: 50px;
     padding: 5px 5%;
 
 }
 .header .navlinks{
     list-style: none;
 }
-.header .navlinks li{
+.header .navlinks .navli{
     display: inline-block;
     margin-top: 20px;
     padding: 20px;
 }
-.header .navlinks a{
+
+.header .navlinks .navlibutton{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.header .navlinks .alink{
     font-size: 700;
     color: #eceff1;
     text-decoration: none;
 }
-.header .navlinks li:hover{
+.header .navlinks .navli:hover{
     transform: scale(1.2);
 
 }
-.header .navlinks li a:hover{
+.header .navlinks .navli .alink:hover{
     color: #ffbc0e;
 }
 
@@ -54,4 +61,12 @@ text-align: center;
 }
 .imgpikachu{
     max-width: 400px;
+}
+.libutton{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.imguser{
+    height: 50px;
 }
