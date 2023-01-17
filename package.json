@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@reduxjs/toolkit": "^1.9.1",
     "bootstrap": "^5.2.3",
+    "firebase": "^9.15.0",
     "mdb-react-ui-kit": "^5.1.0",
     "mdb-ui-kit": "^6.1.0",
     "react": "^18.2.0",

@@ -1,16 +1,21 @@
 import {  MDBContainer,  MDBCol,  MDBRow,  MDBBtn,  MDBIcon,  MDBInput,  MDBCheckbox} from 'mdb-react-ui-kit';
-import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks';
 import { checkingAuthentication, startGoogleSignIn } from '../../store/auth';
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const LoginPage = () => {
 
+  const { status } = useSelector ( state => state.auth);
+
   const dispatch = useDispatch();
   const { email, password, onInputChange }=  useForm({
     email:'orlando@correo.com',
     password: '123456'
   });
+
+  const isAuthenticating = useMemo ( () => status === 'checking', [status] );
 
   const onSubmit = ( event ) =>{
     event.preventDefault();
@@ -45,13 +50,13 @@ export const LoginPage = () => {
                   onChange={ onInputChange }
                   size='lg'/>
                   
-              <MDBBtn type='submit' className="mb-1 w-100" >Logear</MDBBtn>
+              <MDBBtn disabled= {isAuthenticating} type='submit' className="mb-1 w-100" >Logear</MDBBtn>
 
               <div className="divider  align-items-center my-1">
                 <p className="text-center fw-bold mx-1 mb-0">O</p>
               </div>
             </form>
-              <MDBBtn onClick={onGoogleSignIn} className="mb-4 w-100" style={{backgroundColor: '#3b5998'}} >
+              <MDBBtn disabled= {isAuthenticating} onClick={onGoogleSignIn} className="mb-4 w-100" style={{backgroundColor: '#3b5998'}} >
               <MDBIcon fab icon="google" className="mx-2"/>
               Continua Con Google
               </MDBBtn>              
