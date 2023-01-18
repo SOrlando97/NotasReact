@@ -70,3 +70,10 @@ text-align: center;
 .imguser{
     height: 50px;
 }
+.errorregisterinput{
+    color: red;
+    margin-top: -20px;
+}
+.diverror{
+    text-align: left;
+}
