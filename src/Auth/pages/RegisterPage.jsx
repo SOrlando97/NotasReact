@@ -1,13 +1,18 @@
-import {  MDBContainer,  MDBCol,  MDBRow,  MDBBtn,  MDBIcon,  MDBInput,  MDBCheckbox} from 'mdb-react-ui-kit';
+import { MDBBtn,   MDBInput} from 'mdb-react-ui-kit';
+import { useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks';
+import { startCreateUser } from '../../store/auth';
 import { AuthLayout } from "../layout/AuthLayout"
 
 export const RegisterPage = () => {
+  const dispatch = useDispatch();   
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const formData = {
-    email : 'orlando@correo.com',
-    password: '123456',
-    displayName: 'Orlando',
+    email : '',
+    password: '',
+    displayName: '',
   }
   
 
@@ -19,18 +24,23 @@ export const RegisterPage = () => {
 
   }
 
+  const {status, errorMessage} = useSelector( state => state.auth);
+  const isCheckingAuthentication = useMemo ( ()=> status === ' checking' , [status])
+
   const { 
     displayName,email, password, onInputChange, formState,
-    inFormValid, displayNameValid, emailValid, passwordValid,
+    isFormValid, displayNameValid, emailValid, passwordValid,
   } =  useForm( formData, formValidations);
 
   const onSubmit = ( event ) => {
     
-    event.preventDefault();
+    event.preventDefault();    
+    setFormSubmitted(true);
+    if ( !isFormValid ) return;
+    dispatch( startCreateUser(formState));
     console.log ( formState );
 
   }
-  const emailerror = 'a'
   return (
     <>
       <form onSubmit={ onSubmit }>
@@ -44,7 +54,7 @@ export const RegisterPage = () => {
                 onChange= { onInputChange }
                 size='lg'/>
 
-                {displayNameValid && <div className='diverror'><h6 className='errorregisterinput'>{displayNameValid}</h6></div>}
+                {displayNameValid && formSubmitted && <div className='diverror'><h6 className='errorregisterinput'>{displayNameValid}</h6></div>}
               <MDBInput 
                 wrapperClass='mb-4' 
                 label='Direccion de correo'  
@@ -54,7 +64,7 @@ export const RegisterPage = () => {
                 onChange= { onInputChange }
                 size='lg'/>
 
-                {emailValid && <div className='diverror'><h6 className='errorregisterinput'>{emailValid}</h6></div>}
+                {emailValid && formSubmitted && <div className='diverror'><h6 className='errorregisterinput'>{emailValid}</h6></div>}
               <MDBInput 
                 wrapperClass='mb-4' 
                 label='Contraseña'  
@@ -64,9 +74,11 @@ export const RegisterPage = () => {
                 onChange= { onInputChange }
                 size='lg'/>
                 
-                {passwordValid && <div className='diverror'><h6 className='errorregisterinput'>{passwordValid}</h6></div>}
+                {passwordValid && formSubmitted && <div className='diverror'><h6 className='errorregisterinput'>{passwordValid}</h6></div>}
                   
-              <MDBBtn type='submit' className="mb-1 w-100">Registrate</MDBBtn>  
+
+              {errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}  
+              <MDBBtn disabled = {isCheckingAuthentication} type='submit' className="mb-1 w-100">Registrate</MDBBtn>  
               <a href='/auth/login' >Ya tienes cuenta? Inicia Sesión</a>
           </AuthLayout>
       </form>
