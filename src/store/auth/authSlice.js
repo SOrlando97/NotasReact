@@ -4,7 +4,7 @@ export const authSlice = createSlice({
 
     name: 'auth',
     initialState:{
-        status: 'not-authenticated',
+        status: 'checking',
         uid: null,
         email: null,
         displayName: null,

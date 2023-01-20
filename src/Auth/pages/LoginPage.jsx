@@ -2,12 +2,12 @@ import {  MDBContainer,  MDBCol,  MDBRow,  MDBBtn,  MDBIcon,  MDBInput,  MDBChec
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks';
-import { checkingAuthentication, startGoogleSignIn } from '../../store/auth';
+import {startGoogleSignIn, startLoginEmailPass } from '../../store/auth';
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const LoginPage = () => {
 
-  const { status } = useSelector ( state => state.auth);
+  const { status, errorMessage } = useSelector ( state => state.auth);
 
   const dispatch = useDispatch();
   const { email, password, onInputChange }=  useForm({
@@ -19,16 +19,13 @@ export const LoginPage = () => {
 
   const onSubmit = ( event ) =>{
     event.preventDefault();
-    console.log({email,password});
-    dispatch (checkingAuthentication());
+    dispatch (startLoginEmailPass({ email, password}));
   }
 
   const onGoogleSignIn = ()=>{
     console.log ('onGoogleSign');
     dispatch (startGoogleSignIn());
   }
-
-
 
   return (
     <>      
@@ -49,7 +46,7 @@ export const LoginPage = () => {
                   value={ password }
                   onChange={ onInputChange }
                   size='lg'/>
-                  
+              {errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}    
               <MDBBtn disabled= {isAuthenticating} type='submit' className="mb-1 w-100" >Logear</MDBBtn>
 
               <div className="divider  align-items-center my-1">
