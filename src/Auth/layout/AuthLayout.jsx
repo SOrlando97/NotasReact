@@ -1,4 +1,4 @@
-import {  MDBCard,MDBCardImage,MDBCardBody, MDBContainer,  MDBCol,  MDBRow} from 'mdb-react-ui-kit';
+import {  MDBCard,MDBCardBody, MDBContainer,  MDBCol,  MDBRow} from 'mdb-react-ui-kit';
 export const AuthLayout = ({children}) => {
   return (
     <>          
