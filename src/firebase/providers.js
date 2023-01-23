@@ -1,5 +1,6 @@
 import { async } from "@firebase/util";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { logout } from "../store/auth";
 import { FirebaseAuth } from "./config";
 
 const googleProvider = new GoogleAuthProvider();
@@ -68,4 +69,8 @@ export const loginWithEmailPass = async ({ email, password })=>{
         }
     }
 
+}
+export const logoutFirebase = async() =>{
+    return await FirebaseAuth.signOut();
+    dispath ( logout() );
 }
