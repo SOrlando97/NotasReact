@@ -2,14 +2,14 @@ import { async } from "@firebase/util";
 import { loginWithEmailPass, logoutFirebase, registerUser, singInWithGoogle } from "../../firebase/providers";
 import { chekingCredentials, login, logout } from "./"
 
-export const checkingAuthentication = ( email, password ) => {
+// export const checkingAuthentication = ( email, password ) => {
 
-    return async ( dispatch ) =>{
+//     return async ( dispatch ) =>{
 
-        dispatch ( chekingCredentials());
+//         dispatch ( chekingCredentials());
 
-    }
-}
+//     }
+// }
 
 export const startGoogleSignIn = () =>{
     return async (dispatch ) =>{

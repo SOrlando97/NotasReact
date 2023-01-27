@@ -11,6 +11,9 @@
     padding: 5px 5%;
 
 }
+body{
+    background-color: rgb(75, 103, 226);
+}
 .header .navlinks{
     list-style: none;
 }
@@ -51,13 +54,13 @@
 }
 }
 .card{
-box-shadow: 4px 4px 10px;
+    box-shadow: 4px 4px 10px;
 }
 .maxconteinerform{
-font-size: 20px;
-max-width: 400px;
-margin: 5% auto;
-text-align: center;
+    font-size: 20px;
+    max-width: 400px;
+    margin: 5% auto;
+    text-align: center;
 }
 .imgpikachu{
     max-width: 400px;
@@ -76,4 +79,65 @@ text-align: center;
 }
 .diverror{
     text-align: left;
+}
+.notas{
+    margin: 2% auto;
+    display: grid;
+    width: 90%;
+    gap: 30px;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 290px);
+    justify-content: center;
+}
+.notas .caja{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.caja{
+    background-color: white;
+    border-radius: 10px;
+    height: 320px;
+    padding: 10px 15px 15px;
+}
+.caja .detallesaltos p{
+    font-size: 22px;
+    font-weight: 500;
+}
+.caja .detallesbajos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+.detallesbajos span{
+ color: #6d6d6d;
+ font-size: 14px;
+ margin-right: -35px;
+}
+.añadir{
+    background-color: white;
+    border-radius: 10px;
+    height: 320px;
+    padding: 10px 15px 15px;
+    display: grid;
+    place-content: center;
+
+    
+}
+.añadir .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 78px;
+    width: 78px;
+    font-size: 40px;
+    border-radius: 50%;
+    color: rgb(58, 153, 177);
+    border: 2px dashed rgb(58, 153, 177);
+}
+.prioridad{
+    width: 50px;
+    rotate: 270deg;
 }
