@@ -1,6 +1,50 @@
+import { useDispatch } from 'react-redux';
+import {  MDBInput, MDBTextArea, MDBBtn } from 'mdb-react-ui-kit';
+import { startAddNote } from '../../store/notas/thunks';
+
 export const NotasPage = () => {
+
+  const dispatch = useDispatch ();
+
+  const onClickNewNote = () =>{
+    dispatch (startAddNote());
+  }
   return (
     <>
+      <div className="popupbox">
+        <div className="popup">
+          <div className="contenido">
+            <header>
+                <p>Añade una nota nueva</p>
+                <i className='uil uil-times'></i>                          
+            </header>
+          <form>
+            <MDBInput id='title' wrapperClass='mb-4' label='Titulo' />
+            <MDBTextArea wrapperClass='mb-4' id='description' rows='4' label='Descripcion' />
+            <p>Eliga la prioridad</p>
+            <div className='seleccion'>
+              <input type="radio" id="baja" name="prioridad" value="baja" />
+              <img className="prioridad" for="baja" src=".\img\squirtle.png" alt="baja" />
+              <label for="baja">baja</label>
+
+              <input type="radio" id="media" name="prioridad" value="media" />
+              <img className="prioridad" for="media" src=".\img\bullbasaur.png" alt="media" />
+              <label for="media">media</label>
+
+              <input type="radio" id="alta" name="prioridad" value="alta" />
+              <img className="prioridad" for="alta" src=".\img\charmander.png" alt="alta" />
+              <label for="alta">alta</label>
+            </div>
+            
+            <MDBBtn type='submit' className='mb-4' block>
+              Aceptar
+            </MDBBtn>
+            
+          </form>
+
+          </div>
+        </div>
+      </div>
       <div className="notas">
         <div className="caja">
           <div className="detallesaltos">
