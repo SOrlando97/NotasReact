@@ -122,6 +122,7 @@ body{
     padding: 10px 15px 15px;
     display: grid;
     place-content: center;
+    cursor: pointer;
 
     
 }
@@ -195,6 +196,20 @@ body{
     height: 150px;
     resize: none;
 }
+.seleccion{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-bottom: 10px;
+}
+.seleccion .opcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+}
 .seleccion input{
+    margin: 0;
+    padding: 0;
     width: 20px;
 }
