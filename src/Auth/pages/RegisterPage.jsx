@@ -5,17 +5,16 @@ import { useForm } from '../../hooks';
 import { startCreateUser } from '../../store/auth';
 import { AuthLayout } from "../layout/AuthLayout"
 
+const formData = {
+  email : '',
+  password: '',
+  displayName: '',
+}
+
 export const RegisterPage = () => {
   const dispatch = useDispatch();   
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const formData = {
-    email : '',
-    password: '',
-    displayName: '',
-  }
+  const [formSubmitted, setFormSubmitted] = useState(false); 
   
-
   const formValidations = {
 
     email : [(value)=>value.includes('@'),'El correo debe tener una @'],

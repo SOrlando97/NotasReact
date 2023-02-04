@@ -1,12 +1,13 @@
 import { collection, doc, setDoc } from 'firebase/firestore/lite'
 import { FirebaseDBh } from '../../firebase/config';
-import { addNote } from './notasSlice';
+import { loadNotas } from '../../helpers';
+import { addNote, setNotes } from './notasSlice';
 export const startAddNote = ({title,description, priority}) =>{
     return async ( dispatch, getState ) =>{        
-        const { uid } = getState().auth;        
-        dispatch (addNote({title,description,priority}));
+        const { uid } = getState().auth;      
+
         const newNote = {
-            titulo: title,
+            title: title,
             description: description,
             priority: priority,
             date: new Date().getTime(),
@@ -14,10 +15,20 @@ export const startAddNote = ({title,description, priority}) =>{
         }      
         const newDoc = doc( collection( FirebaseDBh, `notasaplication/${ uid }/notes`) );
         const setDocResp = await setDoc( newDoc, newNote);
-
+        
+        dispatch (addNote({title,description,priority}));
 
         console.log({newDoc, setDocResp});
         
+
+    }
+}
+export const startLoadingNotas = () =>{
+    return async ( dispatch, getState ) =>{
+
+        const { uid } = getState().auth;
+        const notes = await loadNotas( uid );
+        dispatch ( setNotes( notes ));
 
     }
 }

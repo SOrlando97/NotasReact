@@ -18,17 +18,17 @@ export const notasSlice = createSlice({
                 description: action.payload.description,
                 priority: action.payload.priority,
             }) 
-        },
-        deleteNote: (state, action) =>{
-
-        },
+        },        
         setNotes: (state, action)=>{
-
+            state.notes = action.payload;
         },
         setSaving: (state, action)=>{
 
         },
         updateNote: (state, action)=>{
+
+        },
+        deleteNote: (state, action) =>{
 
         },
     }

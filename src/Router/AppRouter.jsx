@@ -7,6 +7,7 @@ import { AuthRoutes } from "../Auth/routes/AuthRoutes"
 import { FirebaseAuth } from "../firebase/config"
 import { NotasRoutes } from "../Notas/routes/NotasRoutes"
 import { login, logout } from "../store/auth"
+import { startLoadingNotas } from "../store/notas/thunks"
 import { CheckingAuth } from "../ui/"
 
 export const AppRouter = () => {
@@ -18,6 +19,7 @@ export const AppRouter = () => {
       if( !user ) return dispatch ( logout() );
       const { uid, email, displayName, photoURL} = user;
       dispatch( login({ uid, email, displayName, photoURL }));
+      dispatch( startLoadingNotas());
     })
   
   }, [])
