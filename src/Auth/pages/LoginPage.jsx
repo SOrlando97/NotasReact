@@ -10,7 +10,7 @@ export const LoginPage = () => {
   const { status, errorMessage } = useSelector ( state => state.auth);
 
   const dispatch = useDispatch();
-  const { email, password, onInputChange }=  useForm({
+  const { email, password, onInputChange } =  useForm ({
     email:'',
     password: ''
   });
@@ -58,10 +58,6 @@ export const LoginPage = () => {
               Continua Con Google
               </MDBBtn>              
               <a href='/auth/register'>No tienes cuenta? registrate</a>
-            
-              
- 
-           
         </AuthLayout>
    
     </>

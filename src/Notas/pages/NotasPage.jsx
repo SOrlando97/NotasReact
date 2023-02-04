@@ -5,27 +5,29 @@ import { PopUp } from './components/PopUp'
 import { Notas } from './components/Notas';
 
 export const NotasPage = () => {
-  const [popupstate, setPopupstate] = useState(false);
-  const [title, setTitle] = useState('');
-  
-  const dispatch = useDispatch ();
-
-  const popuponclick = () => {
-      setTitle('Añade una nota nueva')
-      setPopupstate(true);
-  };
-  const popupoffclick = () =>{
-    setPopupstate(false);
-  };
-  const onClickNewNote = () =>{
-    dispatch (startAddNote());
-  };
-  return (
-    <> 
-      {popupstate && <PopUp popupclose={popupoffclick} 
-                            titulo={title}/>}
-      <Notas popuponclick={ popuponclick }/>
-    </>
+    const [popupstate, setPopupstate] = useState(false);
+    const [title, setTitle] = useState('');
     
-  )
+    const dispatch = useDispatch ();
+
+    const popuponclick = () => {
+        setTitle('Añade una nota nueva')
+        setPopupstate(true);
+    };
+    const popupoffclick = () =>{
+      setPopupstate(false);
+    };
+    const onClickNewNote = (title,description,priority) =>{
+      dispatch (startAddNote({title,description,priority}));
+      popupoffclick();
+    };
+    return (
+      <>
+        {popupstate && <PopUp popupclose={popupoffclick}
+                              startnewnote={ onClickNewNote }
+                              titulo={title}/> }
+        <Notas popuponclick={ popuponclick }/>
+      </>
+      
+    )
 }

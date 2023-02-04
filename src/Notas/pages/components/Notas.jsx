@@ -14,7 +14,7 @@ export const Notas = ({popuponclick}) => {
           </div>
           <div className="detallesbajos">
             <span>25/enero/2023</span>
-            <img className="prioridad" src=".\img\bullbasaur.png" alt="media" />
+            <img className="priority" src=".\img\bullbasaur.png" alt="media" />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>
@@ -28,7 +28,7 @@ export const Notas = ({popuponclick}) => {
           </div>
           <div className="detallesbajos">
             <span>25/enero/2023</span>
-            <img className="prioridad" src=".\img\charmander.png" alt="alta" />
+            <img className="priority" src=".\img\charmander.png" alt="alta" />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>
@@ -42,7 +42,7 @@ export const Notas = ({popuponclick}) => {
           </div>
           <div className="detallesbajos">
             <span>25/enero/2023</span>
-            <img className="prioridad" src=".\img\bullbasaur.png" alt="media" />
+            <img className="priority" src=".\img\bullbasaur.png" alt="media" />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>
@@ -56,7 +56,7 @@ export const Notas = ({popuponclick}) => {
           </div>
           <div className="detallesbajos">
             <span>25/enero/2023</span>
-            <img className="prioridad" src=".\img\squirtle.png" alt="baja" />
+            <img className="priority" src=".\img\squirtle.png" alt="baja" />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>
@@ -70,7 +70,7 @@ export const Notas = ({popuponclick}) => {
           </div>
           <div className="detallesbajos">
             <span>25/enero/2023</span>
-            <img className="prioridad" src=".\img\bullbasaur.png" alt="media" />
+            <img className="priority" src=".\img\bullbasaur.png" alt="media" />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>

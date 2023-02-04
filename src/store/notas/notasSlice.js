@@ -3,20 +3,21 @@ import { createSlice } from '@reduxjs/toolkit';
 export const notasSlice = createSlice({
     name: 'notas',
     initialState:{
-        isSaving: true,
+        isSaving: false,
         saveMessave: '',
         notes: [],
         active: null,
-        // active:{
-        //     id: 'asdasda',
-        //     title: '',
-        //     description: '',
-        //     priority: '',
-        // }
     },
+    
     reducers:{
         addNote: (state, action) =>{
-
+            state.isSaving = true,
+            state.saveMessave = 'Nota Agregada',
+            state.notes.push({
+                title: action.payload.title,
+                description: action.payload.description,
+                priority: action.payload.priority,
+            }) 
         },
         deleteNote: (state, action) =>{
 

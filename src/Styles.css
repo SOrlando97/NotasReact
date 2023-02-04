@@ -137,7 +137,7 @@ body{
     color: rgb(58, 153, 177);
     border: 2px dashed rgb(58, 153, 177);
 }
-.prioridad{
+.priority{
     width: 50px;
     rotate: 270deg;
 }
