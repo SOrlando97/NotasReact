@@ -2,12 +2,12 @@ import React from 'react'
 import {  MDBInput, MDBTextArea, MDBBtn } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 import { useForm } from '../../../hooks';
+const formData = {
+  title:'',
+  description:'',
+}
 export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
-  const {title,description,onInputChange} = useForm({
-      title:'',
-      description:'',
-
-  });
+  const {title,description,onInputChange} = useForm(formData);
   const [priority, setPriority] = useState("baja");
   const cambioprio = e =>{
     setPriority(e.target.value);

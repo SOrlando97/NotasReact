@@ -4,7 +4,16 @@ const priority = {
   media: "./img/psyduck.png",
   alta: "./img/charmander.png"
 }
-export const Cardnota = ({ nota }) => {
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"];
+export const Cardnota = ({ nota }) => {  
+  const fecha = ()=>{
+    const fechita = new Date(nota.date);
+    const mes = meses[fechita.getMonth()];
+    const año = fechita.getFullYear();
+    const dia = fechita.getDate();
+    return `${dia}/${mes}/${año}`;
+  }
+  fecha();
   return (
     <>
         <div className="caja" >
@@ -13,8 +22,8 @@ export const Cardnota = ({ nota }) => {
             <span>{nota.description}</span>
           </div>
           <div className="detallesbajos">
-            <span>25/enero/2023</span>
-            <img className="priority" src={priority[nota.priority]} alt="media" />
+            <span>{fecha()}</span>
+            <img className="priority" src={priority[nota.priority]} alt={nota.priority} />
             <div className="botones">
               <i className="uil uil-edit-alt"></i>
               <i className="uil uil-multiply"></i>

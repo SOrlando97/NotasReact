@@ -14,6 +14,7 @@ export const notasSlice = createSlice({
             state.isSaving = true,
             state.saveMessave = 'Nota Agregada',
             state.notes.push({
+                id: action.payload.id,
                 title: action.payload.title,
                 description: action.payload.description,
                 priority: action.payload.priority,

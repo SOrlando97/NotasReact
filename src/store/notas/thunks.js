@@ -15,12 +15,8 @@ export const startAddNote = ({title,description, priority}) =>{
         }      
         const newDoc = doc( collection( FirebaseDBh, `notasaplication/${ uid }/notes`) );
         const setDocResp = await setDoc( newDoc, newNote);
-        
-        dispatch (addNote({title,description,priority}));
-
-        console.log({newDoc, setDocResp});
-        
-
+        const id = newDoc.id;        
+        dispatch (addNote({id,title,description,priority}));
     }
 }
 export const startLoadingNotas = () =>{
