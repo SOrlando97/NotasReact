@@ -24,7 +24,7 @@ export const notasSlice = createSlice({
             state.notes = action.payload;
         },
         setSaving: (state, action)=>{
-
+            
         },
         updateNote: (state, action)=>{
 
