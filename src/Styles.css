@@ -114,6 +114,11 @@ body{
  color: #6d6d6d;
  font-size: 14px;
  margin-right: -35px;
+
+}
+.detallesbajos i{
+    margin-right: 7px;
+    cursor: pointer;
 }
 .añadir{
     background-color: white;
@@ -124,7 +129,6 @@ body{
     place-content: center;
     cursor: pointer;
 
-    
 }
 .añadir .icon{
     display: flex;

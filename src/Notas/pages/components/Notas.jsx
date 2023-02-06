@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Cardnota } from './';
-export const Notas = ({popuponclick}) => {
+export const Notas = ({popuponclick, popuponclickedit}) => {
   const  {notes}  = useSelector( state => state.notas);
   return (
     <>
@@ -11,7 +11,9 @@ export const Notas = ({popuponclick}) => {
         </div>
         {
         notes.map( nota => (          
-          <Cardnota key={nota.id} nota={ nota }/>          
+          <Cardnota key={nota.id} 
+                    nota={ nota }
+                    clickedit={ popuponclickedit }/>          
         ))
         }
       </div>

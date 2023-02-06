@@ -2,16 +2,22 @@ import React from 'react'
 import {  MDBInput, MDBTextArea, MDBBtn } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 import { useForm } from '../../../hooks';
-const formData = {
-  title:'',
-  description:'',
-}
-export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
-  const {title,description,onInputChange} = useForm(formData);
-  const [priority, setPriority] = useState("baja");
+
+export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
+
+  const {title,description,priority,onInputChange} = useForm(formData);
+
+  const [priori, setPriority] = useState(priority);
+
   const cambioprio = e =>{
     setPriority(e.target.value);
   };
+  const submit = (event)=> {
+      event.preventDefault();
+      titulo == "Añade una nota nueva"
+      ?startnewnote( title,description,priority)
+      :editnote( title, description, priority )
+  }
   return (
     <>
         <div className="popupbox">
@@ -21,8 +27,7 @@ export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
                 <p>{titulo}</p>
                 <i onClick={ popupclose }className='uil uil-times'></i>                          
             </header>
-          <form onSubmit={(event)=>{ event.preventDefault();
-            startnewnote( title,description,priority)}}>
+          <form onSubmit={ submit }>
           
             <MDBInput id='title' 
                       wrapperClass='mb-4' 
@@ -45,7 +50,7 @@ export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
                         id="baja" 
                         name="priority" 
                         value="baja"
-                        checked = {priority == "baja"? true:false}
+                        checked = {priori == "baja"? true:false}
                         onChange = { cambioprio }
                         />
                 <label htmlFor="baja">baja</label>
@@ -55,9 +60,9 @@ export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
               <div className='opcion'>
                 <input type="radio" 
                         id="media" 
-                        name="priority" 
+                        name="priori" 
                         value="media" 
-                        checked = {priority == "media"? true:false}
+                        checked = {priori == "media"? true:false}
                         onChange = { cambioprio }/>
                 <label htmlFor="media">media</label>
                 <img className="priority" htmlFor="media" src=".\img\psyduck.png" alt="media" />
@@ -66,9 +71,9 @@ export const PopUp = ({popupclose, startnewnote, titulo, formdir}) => {
               <div className='opcion'>
                 <input type="radio" 
                         id="alta" 
-                        name="priority" 
+                        name="priori" 
                         value="alta" 
-                        checked = {priority == "alta"? true:false}
+                        checked = {priori == "alta"? true:false}
                         onChange = { cambioprio }/>
                 <label htmlFor="alta">alta</label>
                 <img className="priority" htmlFor="alta" src=".\img\charmander.png" alt="alta" />
