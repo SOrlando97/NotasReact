@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState,} from 'react';
-import { startAddNote } from '../../store/notas/thunks';
+import { startAddNote, startEditNote } from '../../store/notas/thunks';
 import { PopUp } from './components/PopUp'
 import { Notas } from './components/Notas';
 
@@ -15,7 +15,8 @@ export const NotasPage = () => {
         popupoffclick();
     };
     //Boton popup Formulario editar nota ----------- no hecho
-    const onClickEditNote = (title, description, priority) =>{
+    const onClickEditNote = (id,title, description, priority) =>{
+      dispatch (startEditNote({id,title,description,priority}))
       popupoffclick();
     }
     // Abrir popup para nueva nota

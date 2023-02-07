@@ -16,7 +16,7 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
       event.preventDefault();
       titulo == "Añade una nota nueva"
       ?startnewnote( title,description,priority)
-      :editnote( title, description, priority )
+      :editnote( formData.id,title, description, priority )
   }
   return (
     <>
