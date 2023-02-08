@@ -15,8 +15,8 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
   const submit = (event)=> {
       event.preventDefault();
       titulo == "Añade una nota nueva"
-      ?startnewnote( title,description,priority)
-      :editnote( formData.id,title, description, priority )
+      ?startnewnote( title,description,priori)
+      :editnote( formData.id,title, description, priori )
   }
   return (
     <>
@@ -48,7 +48,7 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
               <div className='opcion'>
                 <input type="radio" 
                         id="baja" 
-                        name="priority" 
+                        name="priori" 
                         value="baja"
                         checked = {priori == "baja"? true:false}
                         onChange = { cambioprio }

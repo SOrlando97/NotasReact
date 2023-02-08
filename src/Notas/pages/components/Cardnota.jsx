@@ -5,7 +5,7 @@ const priority = {
   alta: "./img/charmander.png"
 }
 const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"];
-export const Cardnota = ({ nota,clickedit }) => {  
+export const Cardnota = ({ nota,clickedit, deletenote}) => {  
   const fecha = ()=>{
     const fechita = new Date(nota.date);
     const mes = meses[fechita.getMonth()];
@@ -26,7 +26,7 @@ export const Cardnota = ({ nota,clickedit }) => {
             <img className="priority" src={priority[nota.priority]} alt={nota.priority} />
             <div className="botones">
               <i onClick={ ()=> clickedit( nota ) } className="uil uil-edit-alt"></i>
-              <i className="uil uil-multiply"></i>
+              <i onClick={ ()=> deletenote( nota ) }className="uil uil-multiply"></i>
             </div>
           </div>
         </div>

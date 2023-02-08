@@ -6,7 +6,6 @@ export const notasSlice = createSlice({
         isSaving: false,
         saveMessave: '',
         notes: [],
-        active: null,
     },
     
     reducers:{
@@ -39,10 +38,14 @@ export const notasSlice = createSlice({
             state.isSaving = false
         },
         deleteNote: (state, action) =>{
-
+            state.notes = state.notes.filter ( note => note.id !== action.payload);
+            state.isSaving = false
         },
+        ordernotes: (state, action) =>{
+            state.notes = action.payload;
+        }
     }
 
 
 });
-export const { addNote,deleteNote,setNotes,setSaving, updateNote } = notasSlice.actions;
+export const { addNote,deleteNote,setNotes,setSaving, updateNote,ordernotes } = notasSlice.actions;

@@ -1,11 +1,13 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState,} from 'react';
-import { startAddNote, startEditNote } from '../../store/notas/thunks';
+import { startAddNote, startDeleteNote, startEditNote, startOrderNotes } from '../../store/notas/thunks';
 import { PopUp } from './components/PopUp'
 import { Notas } from './components/Notas';
+import { orderbypriority } from './functions/order';
 
 export const NotasPage = () => {
     const [form, setform] = useState({title : '', description : '', priority: "baja" });
+    const  {notes}  = useSelector( state => state.notas);
     const [popupstate, setPopupstate] = useState(false);
     const [title, setTitle] = useState('');    
     const dispatch = useDispatch ();
@@ -35,6 +37,13 @@ export const NotasPage = () => {
     const popupoffclick = () =>{
         setPopupstate(false);
     };
+    // borrar nota
+    const deletenote = ({id}) =>{
+      dispatch( startDeleteNote({id}));
+    }
+    const orderbypriori = (priori) =>{
+      dispatch( startOrderNotes(orderbypriority(priori,notes)));
+    }
     
     return (
       <>
@@ -44,7 +53,9 @@ export const NotasPage = () => {
                               titulo={title}
                               formData={form}/> }
         <Notas popuponclick={ popuponclick } 
-                popuponclickedit={ popuponclickedit }/>
+                popuponclickedit={ popuponclickedit }
+                deletenote = { deletenote }
+                order = { orderbypriori }/>
       </>      
     )
 }
