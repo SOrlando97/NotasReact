@@ -20,7 +20,7 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
   }
   return (
     <>
-        <div className="popupbox">
+        <div className="popupbox noscroll">
         <div className="popup">
           <div className="contenido">
             <header>

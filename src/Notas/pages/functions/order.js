@@ -17,3 +17,9 @@ export const orderbypriority = (priority,notes) =>{
     })
     return [...newnotes,...notascomp];
 }
+export const orderbypriority2 = (priority,notes) =>{    
+    notes?.map( nota =>(
+            console.log(nota)
+        ))
+       
+}

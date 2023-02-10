@@ -142,11 +142,13 @@ body{
     border: 2px dashed rgb(58, 153, 177);
 }
 .priority{
+    z-index: 0;
     width: 50px;
     rotate: 270deg;
 }
 .popupbox{
-    position: absolute;
+    z-index: 1;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -161,6 +163,11 @@ body{
     max-width: 400px;
     width: 100%;
     transform: translate(-50%, -50%);
+}
+@media (max-width: 425px) {
+    .popupbox .popup {
+        max-width: 300px;
+    }
 }
 .popup .contenido{
     background: #fff;
@@ -216,4 +223,7 @@ body{
     margin: 0;
     padding: 0;
     width: 20px;
+}
+.noscroll{
+    overflow: hidden;
 }

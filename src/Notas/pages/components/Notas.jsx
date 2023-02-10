@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Cardnota } from './';
 export const Notas = ({popuponclick, popuponclickedit, deletenote,order}) => {
   const  {notes}  = useSelector( state => state.notas);
-  const [priori, setpriori] = useState('baja')
+  const [priori, setpriori] = useState('seleccione')
   const cambioprio = e =>{
     setpriori(e.target.value);
   };
@@ -26,7 +26,7 @@ export const Notas = ({popuponclick, popuponclickedit, deletenote,order}) => {
           <div className="icon"><i className="uil uil-plus"></i></div>
         </div>
         {
-        notes.map( nota => (          
+        notes?.map( nota => (          
           <Cardnota key={nota.id} 
                     nota={ nota }
                     clickedit={ popuponclickedit }
