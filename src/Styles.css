@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+:root{
+    --header: #ff523b;
+    --body: rgb(236, 236, 236);
+    --backcharmander: rgba(241, 86, 14, 0.808);
+    --bordercharmander: rgba(255, 94, 0, 0.89);
+    --backpsyduck :rgba(238, 255, 0, 0.863) ;
+    --borderpsyduck: rgb(197, 197, 1) ;
+    --backbullbasaur : rgba(13, 223, 58, 0.774);
+    --borderbullbasaur: rgb(0, 204, 10) ;
+}
 .header{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
-    background-color: #696969;
+    background-color: var(--header);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -11,7 +21,7 @@
 
 }
 body{
-    background-color: #3490b8;
+    background-color: var(--body);
 }
 .header .navlinks{
     list-style: none;
@@ -121,13 +131,14 @@ body{
     cursor: pointer;
 }
 .añadir{
-    background-color: white;
+    background-color: #A0DFF8;
     border-radius: 10px;
     height: 320px;
     padding: 10px 15px 15px;
     display: grid;
     place-content: center;
     cursor: pointer;
+    box-shadow: 1px 0px 10px 1px #A0DFF8;
 
 }
 .añadir .icon{
@@ -262,16 +273,19 @@ body{
 
 /* css de las cajas de pokemons */
 .charmandercaja{
-    background-color: rgba(241, 116, 14, 0.671);
-    border: 2px solid rgba(255, 94, 0, 0.89);
+    background-color: var(--backcharmander);
+    border: 2px solid var(--bordercharmander);
+    box-shadow: 1px 0px 6px 1px var(--backcharmander);
 }
 .psyduckcaja{    
-    background-color: rgba(228, 243, 10, 0.671);
-    border: 2px solid yellow;
+    background-color: var(--backpsyduck);
+    border: 2px solid var(--borderpsyduck);
+    box-shadow: 1px 0px 10px 1px var(--backpsyduck);
 }
 .bullbasaurcaja{
-    background-color: rgba(13, 223, 58, 0.671);
-    border: 2px solid rgb(0, 204, 10);
+    background-color: var(--backbullbasaur);
+    border: 2px solid var(--borderbullbasaur);
+    box-shadow: 1px 0px 6px 1px var(--backbullbasaur);
 }
 
 
