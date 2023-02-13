@@ -2,7 +2,7 @@
 .header{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
-    background-color: blueviolet;
+    background-color: #696969;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -11,7 +11,7 @@
 
 }
 body{
-    background-color: rgb(75, 103, 226);
+    background-color: #3490b8;
 }
 .header .navlinks{
     list-style: none;
@@ -108,10 +108,10 @@ body{
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #7a7a7a;
 }
 .detallesbajos span{
- color: #6d6d6d;
+ color: #444444;
  font-size: 14px;
  margin-right: -35px;
 
@@ -227,3 +227,51 @@ body{
 .noscroll{
     overflow: hidden;
 }
+.divorderpriori{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divorderpriori p{
+    font-size: 24px;
+    font-weight: 500;
+}
+.btnorderpriori{
+    font-size: large;    
+    margin-top: -5px;
+    width: 70px;
+    height: 35px;
+    color: whitesmoke;
+    background-color: #337bd8;
+}
+.btnorderpriori:hover{
+    background-color: #245492;
+    font-weight: 500;
+}
+.btnorderprioripressed{
+    box-shadow: 0px 0px 7px 2px #285fa7;
+}
+.btni{
+    border-radius: 10px 0px 0px 10px;
+}
+.btnd{
+    border-radius: 0px 10px 10px 0px;
+}
+
+/* css de las cajas de pokemons */
+.charmandercaja{
+    background-color: rgba(241, 116, 14, 0.671);
+    border: 2px solid rgba(255, 94, 0, 0.89);
+}
+.psyduckcaja{    
+    background-color: rgba(228, 243, 10, 0.671);
+    border: 2px solid yellow;
+}
+.bullbasaurcaja{
+    background-color: rgba(13, 223, 58, 0.671);
+    border: 2px solid rgb(0, 204, 10);
+}
+
+

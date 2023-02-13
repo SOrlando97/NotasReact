@@ -25,8 +25,8 @@ export const NotasApp = () => {
                   <img className='imguser' src="/img/user_circle_icon.png" alt="user_icon" /> 
                   </MDBDropdownToggle>
                   <MDBDropdownMenu>
-                    <MDBDropdownItem href='/auth/login' link>Cuenta</MDBDropdownItem>
-                    <MDBDropdownItem onClick={onLogout} link>Logout</MDBDropdownItem>
+                    {/* <MDBDropdownItem href='/auth/login' link>Cuenta</MDBDropdownItem> */}
+                    <MDBDropdownItem onClick={onLogout} link>Salir</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </li>

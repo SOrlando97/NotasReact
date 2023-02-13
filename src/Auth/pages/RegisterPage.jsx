@@ -37,7 +37,6 @@ export const RegisterPage = () => {
     setFormSubmitted(true);
     if ( !isFormValid ) return;
     dispatch( startCreateUser(formState));
-    console.log ( formState );
 
   }
   return (

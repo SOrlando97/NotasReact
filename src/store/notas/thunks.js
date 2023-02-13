@@ -47,7 +47,6 @@ export const startDeleteNote = ({id})=>{
     return async (dispatch, getState) =>{
         dispatch(setSaving());
         const { uid } = getState().auth;
-        console.log(id)
 
         const Refnota = doc(  FirebaseDBh, `notasaplication/${ uid }/notes/${ id }`) ;
         await deleteDoc( Refnota );
