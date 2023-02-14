@@ -4,8 +4,12 @@ import { useState } from 'react';
 import { useForm } from '../../../hooks';
 
 export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
-
-  const {title,description,priority,onInputChange} = useForm(formData);
+  const [formSubmitted, setFormSubmitted] = useState(false); 
+  const formValidations = {
+    title : [(value)=>value.length<= 50,'el titulo no debe ser tan largo'],
+    description:[(value)=>value.length<= 300,'La descripcion debe ser menor a 300 caracteres'],
+  }
+  const {title,description,priority,isFormValid,titleValid,descriptionValid,onInputChange} = useForm(formData,formValidations);
 
   const [priori, setPriority] = useState(priority);
 
@@ -14,10 +18,13 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
   };
   const submit = (event)=> {
       event.preventDefault();
+      setFormSubmitted(true);
+      if ( !isFormValid ) return;
       titulo == "Añade una nota nueva"
       ?startnewnote( title,description,priori)
       :editnote( formData.id,title, description, priori )
   }
+  
   return (
     <>
         <div className="popupbox noscroll">
@@ -34,7 +41,9 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
                       label='Titulo' 
                       name='title'
                       value={ title }
-                      onChange={ onInputChange } />
+                      onChange={ onInputChange } 
+                      />
+            {titleValid && formSubmitted && <div className='diverror'><h6 className='errorregisterinput'>{titleValid}</h6></div>}
             <MDBTextArea wrapperClass='mb-4' 
                       id='description' 
                       rows='4' 
@@ -42,7 +51,7 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
                       name='description'
                       value={ description }
                       onChange={ onInputChange } />
-
+            {descriptionValid && formSubmitted && <div className='diverror'><h6 className='errorregisterinput'>{descriptionValid}</h6></div>}
             <p>Eliga la prioridad</p>
             <div className='seleccion'>
               <div className='opcion'>

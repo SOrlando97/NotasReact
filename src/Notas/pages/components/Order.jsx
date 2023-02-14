@@ -6,7 +6,6 @@ import { buttonorder } from '../functions';
 export const Order = ({popuponclick, popuponclickedit, deletenote,order}) => {
     const  {notes}  = useSelector( state => state.notas);
     const  {orderby}  = useSelector( state => state.notas);
-    const  {isSaving}  = useSelector( state => state.notas);  
     const [priori, setpriori] = useState(orderby)
     const [btnorder, setBtnorder] = useState();
     const cambioprio = e =>{
@@ -43,7 +42,7 @@ export const Order = ({popuponclick, popuponclickedit, deletenote,order}) => {
                 name='priori'
                 className='btnorderpriori btnud'
                 onClick = { cambioprio }
-                >Nuevas</button>
+                >Baja</button>
             </div>
             <div>
             <button 

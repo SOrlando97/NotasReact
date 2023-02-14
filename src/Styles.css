@@ -260,6 +260,7 @@ body{
     color: whitesmoke;
     background-color: #337bd8;
     margin-bottom: 4px;
+    margin-right: -2px;
 }
 .btnorderpriori:hover{
     background-color: #538dda;
