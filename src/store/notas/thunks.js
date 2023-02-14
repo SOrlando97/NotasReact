@@ -1,7 +1,8 @@
 import { collection, deleteDoc, doc, setDoc } from 'firebase/firestore/lite'
 import { FirebaseDBh } from '../../firebase/config';
 import { loadNotas } from '../../helpers';
-import { addNote, deleteNote, ordernotes, setNotes, setSaving, updateNote } from './notasSlice';
+import { orderbypriority } from '../../Notas/pages/functions';
+import { addNote, changepriority, deleteNote, ordernotes, setNotes, setSaving, updateNote } from './notasSlice';
 export const startAddNote = ({title,description, priority}) =>{
     return async ( dispatch, getState ) =>{
         dispatch(setSaving());
@@ -19,15 +20,18 @@ export const startAddNote = ({title,description, priority}) =>{
         const id = newDoc.id;
         const date = new Date().getTime();
         dispatch (addNote({id, title, description, priority, date}));
+
+        //dispatch(startOrderNotes());
     }
 }
 export const startLoadingNotas = () =>{
     return async ( dispatch, getState ) =>{
-
+        dispatch(setSaving());
         const { uid } = getState().auth;
         const notes = await loadNotas( uid );
         dispatch ( setNotes( notes ));
 
+        //dispatch(startOrderNotes());
     }
 }
 export const startEditNote = (note) =>{
@@ -53,10 +57,16 @@ export const startDeleteNote = ({id})=>{
         dispatch(deleteNote( id ));
     }
 }
-export const startOrderNotes = (notes) =>{
+export const startchangepriority = (priority) =>{
     return async (dispatch,getState) =>{
-        dispatch(ordernotes(notes));
-
+        dispatch(changepriority(priority));
+    }
+}
+export const startOrderNotes = () =>{
+    return async (dispatch,getState) =>{
+        const {orderby,notes} = getState().notas;
+        const newnotes  = orderbypriority(orderby,notes);
+        dispatch(ordernotes(newnotes));
     }
     
 }

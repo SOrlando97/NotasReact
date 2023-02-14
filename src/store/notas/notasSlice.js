@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const notasSlice = createSlice({
     name: 'notas',
     initialState:{
+        orderby: '',
         isSaving: false,
         saveMessave: '',
         notes: [],
@@ -22,6 +23,7 @@ export const notasSlice = createSlice({
         },        
         setNotes: (state, action)=>{
             state.notes = action.payload;
+            state.isSaving = false
         },
         setSaving: (state, action)=>{
             state.isSaving = true
@@ -41,6 +43,9 @@ export const notasSlice = createSlice({
             state.notes = state.notes.filter ( note => note.id !== action.payload);
             state.isSaving = false
         },
+        changepriority: (state,action) =>{
+            state.orderby = action.payload;
+        },
         ordernotes: (state, action) =>{
             state.notes = action.payload;
         }
@@ -48,4 +53,4 @@ export const notasSlice = createSlice({
 
 
 });
-export const { addNote,deleteNote,setNotes,setSaving, updateNote,ordernotes } = notasSlice.actions;
+export const { addNote,deleteNote,setNotes,setSaving, updateNote,changepriority,ordernotes } = notasSlice.actions;

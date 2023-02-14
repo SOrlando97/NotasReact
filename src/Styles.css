@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
 :root{
-    --header: #ff523b;
-    --body: rgb(236, 236, 236);
+    --header: #95a5a6;
+    --body: #34495e;
     --backcharmander: rgba(241, 86, 14, 0.808);
     --bordercharmander: rgba(255, 94, 0, 0.89);
     --backpsyduck :rgba(238, 255, 0, 0.863) ;
@@ -40,7 +40,8 @@ body{
 
 .header .navlinks .alink{
     font-size: 700;
-    color: #eceff1;
+    /* color: #eceff1; */
+    color: #2f2f30;
     text-decoration: none;
 }
 .header .navlinks .navli:hover{
@@ -48,7 +49,8 @@ body{
 
 }
 .header .navlinks .navli .alink:hover{
-    color: #ffbc0e;
+    /* color: #ffbc0e; */
+    color: #107ab8;
 }
 
 .rounded-t-5 {
@@ -118,10 +120,10 @@ body{
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
-    border-top: 1px solid #7a7a7a;
+    border-top: 1px solid #505050;
 }
 .detallesbajos span{
- color: #444444;
+ color: #383838;
  font-size: 14px;
  margin-right: -35px;
 
@@ -131,14 +133,14 @@ body{
     cursor: pointer;
 }
 .añadir{
-    background-color: #A0DFF8;
+    background-color: whitesmoke;
     border-radius: 10px;
     height: 320px;
     padding: 10px 15px 15px;
     display: grid;
     place-content: center;
     cursor: pointer;
-    box-shadow: 1px 0px 10px 1px #A0DFF8;
+    box-shadow: 3px 3px 6px 1px black;
 
 }
 .añadir .icon{
@@ -246,6 +248,7 @@ body{
     align-items: center;
 }
 .divorderpriori p{
+    color: whitesmoke;
     font-size: 24px;
     font-weight: 500;
 }
@@ -256,36 +259,50 @@ body{
     height: 35px;
     color: whitesmoke;
     background-color: #337bd8;
+    margin-bottom: 4px;
 }
 .btnorderpriori:hover{
-    background-color: #245492;
+    background-color: #538dda;
     font-weight: 500;
 }
 .btnorderprioripressed{
-    box-shadow: 0px 0px 7px 2px #285fa7;
+    box-shadow: 0px 0px 7px 2px #417bc5;
+    background-color: #5a8fd3;
 }
-.btni{
-    border-radius: 10px 0px 0px 10px;
+.btnui{
+    border-radius: 25px 0px 0px 0px;
 }
-.btnd{
-    border-radius: 0px 10px 10px 0px;
+.btnud{
+    border-radius: 0px 25px 0px 0px;
 }
+.btndd{
+    border-radius: 0px 0px 25px 0px;
+}
+.btndi{
+    border-radius: 0px 0px 0px 25px;
+}
+
 
 /* css de las cajas de pokemons */
 .charmandercaja{
     background-color: var(--backcharmander);
     border: 2px solid var(--bordercharmander);
-    box-shadow: 1px 0px 6px 1px var(--backcharmander);
+    box-shadow: 2px 2px 10px 1px black;
 }
 .psyduckcaja{    
     background-color: var(--backpsyduck);
     border: 2px solid var(--borderpsyduck);
-    box-shadow: 1px 0px 10px 1px var(--backpsyduck);
+    box-shadow: 2px 2px 10px 1px black;
 }
 .bullbasaurcaja{
     background-color: var(--backbullbasaur);
     border: 2px solid var(--borderbullbasaur);
-    box-shadow: 1px 0px 6px 1px var(--backbullbasaur);
+    box-shadow: 2px 2px 10px 1px black;
+}
+.cubone{
+    background-color: #a75d24;
+    border: 2px solid #81481c;
+    box-shadow: 2px 2px 3px 1px black;
 }
 
 
