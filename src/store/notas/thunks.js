@@ -20,8 +20,8 @@ export const startAddNote = ({title,description, priority}) =>{
         const id = newDoc.id;
         const date = new Date().getTime();
         dispatch (addNote({id, title, description, priority, date}));
-
-        //dispatch(startOrderNotes());
+        
+        dispatch(startOrderNotes());
     }
 }
 export const startLoadingNotas = () =>{
@@ -31,7 +31,7 @@ export const startLoadingNotas = () =>{
         const notes = await loadNotas( uid );
         dispatch ( setNotes( notes ));
 
-        //dispatch(startOrderNotes());
+        dispatch(startOrderNotes());
     }
 }
 export const startEditNote = (note) =>{

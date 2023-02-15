@@ -33,7 +33,15 @@ export const Cardnota = ({ nota,clickedit, deletenote}) => {
         <div className={`caja ${priority[nota.priority][1]}`}>
           <div className="detallesaltos">
             <p>{nota.title}</p>
-            <span>{nota.description}</span>
+            
+            {
+              nota.description.length >= 260
+              ?<div className='descriptionscroll'><span>{nota.description}</span></div>
+              
+              :<span>{nota.description}</span>
+            }
+            
+            
           </div>
           <div className="detallesbajos">
             <span>{fecha(nota)}</span>

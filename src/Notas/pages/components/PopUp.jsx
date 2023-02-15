@@ -7,7 +7,7 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
   const [formSubmitted, setFormSubmitted] = useState(false); 
   const formValidations = {
     title : [(value)=>value.length<= 50,'el titulo no debe ser tan largo'],
-    description:[(value)=>value.length<= 300,'La descripcion debe ser menor a 300 caracteres'],
+    //description:[(value)=>value.length<= 300,'La descripcion debe ser menor a 300 caracteres'],
   }
   const {title,description,priority,isFormValid,titleValid,descriptionValid,onInputChange} = useForm(formData,formValidations);
 

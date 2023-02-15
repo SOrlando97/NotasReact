@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const notasSlice = createSlice({
     name: 'notas',
     initialState:{
-        orderby: '',
+        orderby: 'nuevas',
         isSaving: false,
         saveMessave: '',
         notes: [],

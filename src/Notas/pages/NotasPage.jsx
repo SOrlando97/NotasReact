@@ -7,7 +7,6 @@ import { Order } from './components/Order';
 
 export const NotasPage = () => {
     const [form, setform] = useState({title : '', description : '', priority: "baja" });
-    const  {notes}  = useSelector( state => state.notas);
     const [popupstate, setPopupstate] = useState(false);
     const [title, setTitle] = useState('');    
     const dispatch = useDispatch ();
