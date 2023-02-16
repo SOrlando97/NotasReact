@@ -5,7 +5,6 @@ import { Notas } from '.';
 export const Order = ({popuponclick, popuponclickedit, deletenote,order}) => {
     const  {notes}  = useSelector( state => state.notas);
     const  {orderby}  = useSelector( state => state.notas);
-    console.log(orderby);
     const [priori, setpriori] = useState(orderby)
     const [btnorder, setBtnorder] = useState();
     const cambioprio = e =>{

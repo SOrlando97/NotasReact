@@ -27,9 +27,9 @@ export const PopUp = ({popupclose, startnewnote, titulo,formData,editnote}) => {
   
   return (
     <>
-        <div className="popupbox noscroll">
-        <div className="popup">
-          <div className="contenido">
+        <div className="popupbox noscroll ">
+        <div className="popup ">
+          <div className="contenido animate__animated animate__fadeIn">
             <header>
                 <p>{titulo}</p>
                 <i onClick={ popupclose }className='uil uil-times'></i>                          

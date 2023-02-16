@@ -17,12 +17,14 @@ export const singInWithGoogle = async () =>{
         }
 
     } catch (error) {       
+        let mensaje
+        error.message ='Firebase: Error (auth/popup-closed-by-user).'? mensaje = 'Ventana Cerrada': mensaje = error.message;
         
             const errorCode = error.code;
             const errorMessage = error.message;
             return{
                 ok:false,
-                errorMessage,
+                errorMessage: mensaje,
             }
         
     }

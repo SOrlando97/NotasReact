@@ -1,8 +1,9 @@
-import {  MDBContainer,  MDBCol,  MDBRow,  MDBBtn,  MDBIcon,  MDBInput,  MDBCheckbox} from 'mdb-react-ui-kit';
+import { MDBBtn,  MDBIcon,  MDBInput} from 'mdb-react-ui-kit';
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks';
-import {startGoogleSignIn, startLoginEmailPass } from '../../store/auth';
+import { startGoogleSignIn, startLoginEmailPass } from '../../store/auth';
 import { AuthLayout } from '../layout/AuthLayout';
 
 const formData = {
@@ -31,7 +32,7 @@ export const LoginPage = () => {
     <>      
         <AuthLayout>
 
-            <form onSubmit={ onSubmit }>
+            <form onSubmit={ onSubmit } >
               <MDBInput wrapperClass='mb-4' 
                   label='Direccion de correo'  
                   type='email' 
@@ -57,7 +58,7 @@ export const LoginPage = () => {
               <MDBIcon fab icon="google" className="mx-2"/>
               Continua Con Google
               </MDBBtn>              
-              <a href='/auth/register'>No tienes cuenta? registrate</a>
+              <Link to="/auth/register">No tienes cuenta? registrate</Link>
         </AuthLayout>
    
     </>

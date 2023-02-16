@@ -5,7 +5,6 @@ import { startLogout } from '../../../store/auth';
 export const Navbar = () => {
     const { status, displayName } = useSelector ( state => state.auth);
     const prueba = useSelector ( state => state.auth);
-    console.log(prueba);
     let statusactual ='';
     (status === 'authenticated')? statusactual = 'autenticado': statusactual = '';
     const dispatch = useDispatch();

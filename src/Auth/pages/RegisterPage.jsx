@@ -1,6 +1,7 @@
 import { MDBBtn,   MDBInput} from 'mdb-react-ui-kit';
 import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks';
 import { startCreateUser } from '../../store/auth';
 import { AuthLayout } from "../layout/AuthLayout"
@@ -77,7 +78,8 @@ export const RegisterPage = () => {
 
               {errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}  
               <MDBBtn disabled = {isCheckingAuthentication} type='submit' className="mb-1 w-100">Registrate</MDBBtn>  
-              <a href='/auth/login' >Ya tienes cuenta? Inicia Sesión</a>
+              
+              <Link to="/auth/login">Ya tienes cuenta? Inicia Sesión</Link>
           </AuthLayout>
       </form>
       

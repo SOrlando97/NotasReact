@@ -30,7 +30,7 @@ export const Cardnota = ({ nota,clickedit, deletenote}) => {
   }
   return (
     <>
-        <div className={`caja ${priority[nota.priority][1]}`}>
+        <div className={`caja animate__animated animate__bounceInRight ${priority[nota.priority][1]}`}>
           <div className="detallesaltos">
             <p>{nota.title}</p>
             
