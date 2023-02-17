@@ -13,7 +13,7 @@ export const Notas = ({popuponclick, popuponclickedit, deletenote,notes}) => {
         </div> 
       {
         notes.length == 0
-        ? (!isSaving && <Cardnotealone title={"Soledad"} description={"Este lugar esta muy solo"}/>)
+        ? (!isSaving && <Cardnotealone title={"Soledad"} description={"Este lugar está muy solo"}/>)
         :notes?.map( nota => (          
           <Cardnota key={nota.id} 
                     nota={ nota }

@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile, sendPasswordResetEmail } from "firebase/auth";
 import { logout } from "../store/auth";
 import { FirebaseAuth } from "./config";
 
@@ -75,4 +75,23 @@ export const loginWithEmailPass = async ({ email, password })=>{
 export const logoutFirebase = async() =>{
     return await FirebaseAuth.signOut();
     dispath ( logout() );
+}
+export const forgotpassword = async({email}) =>{
+    try {
+        await sendPasswordResetEmail(FirebaseAuth, email)        
+        return{
+            ok: true,
+            errorMessage: "Correo Enviado"
+        }
+    } catch (error) {
+        let mensaje
+        error.message ='FirebaseError: Firebase: Error (auth/invalid-email).'
+        ? mensaje = 'El correo no existe en la base de datos'
+        : mensaje = error.message;
+        return{
+            ok: false,
+            errorMessage: mensaje
+        }
+        
+    }
 }

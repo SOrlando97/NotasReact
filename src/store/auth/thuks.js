@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import { loginWithEmailPass, logoutFirebase, registerUser, singInWithGoogle } from "../../firebase/providers";
+import { forgotpassword, loginWithEmailPass, logoutFirebase, registerUser, singInWithGoogle, } from "../../firebase/providers";
 import { chekingCredentials, login, logout } from "./"
 
 
@@ -40,5 +40,11 @@ export const startLogout =()=>{
     return async ( dispatch ) =>{
         await logoutFirebase ();
         dispatch( logout({}));
+    }
+}
+export const startForgotPass =({email})=>{
+    return async ( dispatch ) =>{
+        const {errorMessage} = await forgotpassword({email})
+        return dispatch( logout({ errorMessage }));
     }
 }

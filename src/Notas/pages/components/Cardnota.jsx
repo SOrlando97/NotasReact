@@ -9,7 +9,7 @@ const priority = {
 export const Cardnota = ({ nota,clickedit, deletenote}) => {  
   const deleten = ( nota ) =>{
     Swal.fire({
-      title: 'Seguro?',
+      title: '¿Seguro?',
       text: "Si borra la nota no se podra restaurar",
       icon: 'warning',
       showCancelButton: true,
@@ -30,7 +30,7 @@ export const Cardnota = ({ nota,clickedit, deletenote}) => {
   }
   return (
     <>
-        <div className={`caja animate__animated animate__bounceInRight ${priority[nota.priority][1]}`}>
+        <div className={`caja animate__animated animate__headShake ${priority[nota.priority][1]}`}>
           <div className="detallesaltos">
             <p>{nota.title}</p>
             

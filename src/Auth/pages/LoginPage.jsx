@@ -57,8 +57,12 @@ export const LoginPage = () => {
               <MDBBtn disabled= {isAuthenticating} onClick={onGoogleSignIn} className="mb-4 w-100" style={{backgroundColor: '#3b5998'}} >
               <MDBIcon fab icon="google" className="mx-2"/>
               Continua Con Google
-              </MDBBtn>              
-              <Link to="/auth/register">No tienes cuenta? registrate</Link>
+              </MDBBtn>
+              <div className="FormLinks">
+                <Link to="/auth/register">No tienes cuenta? registrate</Link>
+                <Link to="/auth/forgotpass">Olvidaste tu contraseña?</Link>
+              </div>            
+              
         </AuthLayout>
    
     </>
