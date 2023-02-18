@@ -9,13 +9,31 @@
     --backbullbasaur : rgba(13, 223, 58, 0.95);
     --borderbullbasaur: rgb(0, 204, 10) ;
 }
-body{
+#root{
     background-color: var(--body);
     background-image: url("/img/pokeball2.svg") ;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.footer{
+    font-family: 'Nunito', sans-serif;
+    font-size: smaller;
+    color: black;
+    height: 60px;
+    width: 100%;
+    margin-top: auto;
+
+}
+.footer img{
+    width: 35px;
+}
+.footer a{
+    margin-left: 30px;
 }
 /* .header{
     font-family: 'Nunito', sans-serif;
@@ -96,8 +114,6 @@ body{
 }
 .card{
     box-shadow: 4px 4px 10px;
-}
-.maxdivform{
 }
 .maxconteinerform{
     font-size: 20px;
