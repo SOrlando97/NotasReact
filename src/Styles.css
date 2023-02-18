@@ -11,7 +11,7 @@
 }
 #root{
     background-color: var(--body);
-    background-image: url("/img/pokeball2.svg") ;
+    background-image: url("./img/pokeball2.svg") ;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
